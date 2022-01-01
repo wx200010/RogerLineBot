@@ -18,7 +18,7 @@ class TocMachine(GraphMachine):
 
     def is_going_to_menu(self, event):
         text = event.message.text
-        return text.lower() == "馬上來" or text.lower() == "不留念了" or text.lower() == "沒料，請你離開" or text.lower() == "冷靜一下"
+        return text.lower() == "馬上來" or text.lower() == "不留念了" or text.lower() == "沒料，請你離開" or text.lower() == "冷靜一下" or text.lower() == "確實"
 
     def is_going_to_roger(self, event):
         text = event.message.text
@@ -79,7 +79,7 @@ class TocMachine(GraphMachine):
         video_links =  roger_getLink(1)
         line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
         line_bot_api.reply_message(reply_token, TextSendMessage(text = video_links[0]))
-        message_block = message.roger_image_back
+        message_block = message.roger_video_back
         to_reply = FlexSendMessage("回主選單", message_block)
         line_bot_api.push_message(userid, to_reply)
         
@@ -91,7 +91,7 @@ class TocMachine(GraphMachine):
         line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
         for link in video_links:
             line_bot_api.push_message(userid, TextSendMessage(text = link))
-        message_block = message.roger_image_back
+        message_block = message.roger_video_back
         to_reply = FlexSendMessage("回主選單", message_block)
         line_bot_api.push_message(userid, to_reply)
         

@@ -252,6 +252,57 @@ roger_image_back = {
     }
   ]
 }
+
+roger_video_back = {
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "header": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "還行吧聊天室",
+            "weight": "bold",
+            "align": "center",
+            "size": "lg"
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "沒料，請你離開",
+              "text": "沒料，請你離開"
+            },
+            "height": "md",
+            "color": "#5bc200",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "確實",
+              "text": "確實"
+            },
+            "height": "md",
+            "color": "#5bc200",
+            "style": "primary"
+          }
+        ],
+        "spacing": "lg"
+      },
+    }
+  ]
+}
 roger_back = {
   "type": "carousel",
   "contents": [
