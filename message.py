@@ -89,23 +89,17 @@ main_menu = {
   ]
 }
 
-roger_menu = {
+roger_menu ={
   "type": "carousel",
   "contents": [
     {
       "type": "bubble",
-      "header": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "好傑寶的功能列~",
-            "weight": "bold",
-            "align": "center",
-            "size": "lg"
-          }
-        ]
+      "hero": {
+        "type": "image",
+        "url": "https://i.imgur.com/ClUYDec.png",
+        "size": "full",
+        "aspectMode": "fit",
+        "aspectRatio": "1.25:1"
       },
       "footer": {
         "type": "box",
@@ -115,22 +109,39 @@ roger_menu = {
             "type": "button",
             "action": {
               "type": "message",
-              "label": "看看最新影片",
+              "label": "獲取最新影片",
               "text": "看看最新影片"
             },
             "height": "md",
-            "color": "#01B468",
+            "color": "##0073ff",
             "style": "primary"
-          },
+          }
+        ],
+        "spacing": "lg"
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://i.imgur.com/ZVJUmAQ.png",
+        "size": "full",
+        "aspectMode": "fit",
+        "aspectRatio": "1.25:1"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
           {
             "type": "button",
             "action": {
               "type": "message",
-              "label": "梗圖抽抽樂",
+              "label": "隨機抽羅傑梗圖",
               "text": "鬼抽"
             },
             "height": "md",
-            "color": "#01c673",
+            "color": "#0071fa",
             "style": "primary"
           }
         ],
@@ -139,6 +150,7 @@ roger_menu = {
     }
   ]
 }
+
 roger_video_ask = {
   "type": "carousel",
   "contents": [
