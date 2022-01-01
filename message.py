@@ -62,7 +62,7 @@ main_menu = {
       "type": "bubble",
       "hero": {
         "type": "image",
-        "url": "https://i.imgur.com/ubLffKT.jpg",
+        "url": "https://i.imgur.com/BDUkv0n.png",
         "size": "full",
         "aspectMode": "fit",
         "aspectRatio": "1.25:1"
@@ -79,7 +79,7 @@ main_menu = {
               "text": "我是好傑寶"
             },
             "height": "md",
-            "color": "#ff9900",
+            "color": "#00aadb",
             "style": "primary"
           }
         ],
@@ -113,7 +113,7 @@ roger_menu ={
               "text": "看看最新影片"
             },
             "height": "md",
-            "color": "##0073ff",
+            "color": "#0073ff",
             "style": "primary"
           }
         ],
@@ -181,7 +181,7 @@ roger_video_ask = {
               "text": "一個"
             },
             "height": "md",
-            "color": "#00d13b",
+            "color": "#00c2f5",
             "style": "primary"
           },
           {
@@ -192,7 +192,7 @@ roger_video_ask = {
               "text": "五個"
             },
             "height": "md",
-            "color": "#00cc66",
+            "color": "#0076f5",
             "style": "primary"
           },
           {
@@ -203,7 +203,7 @@ roger_video_ask = {
               "text": "我是來倒讚的"
             },
             "height": "md",
-            "color": "#eac100",
+            "color": "#4338ff",
             "style": "primary"
           }
         ],
@@ -244,7 +244,7 @@ roger_image_back = {
               "text": "再碰"
             },
             "height": "md",
-            "color": "#00c219",
+            "color": "#007cdb",
             "style": "primary"
           },
           {
@@ -255,7 +255,7 @@ roger_image_back = {
               "text": "沒料，請你離開"
             },
             "height": "md",
-            "color": "#5bc200",
+            "color": "#005af5",
             "style": "primary"
           }
         ],
