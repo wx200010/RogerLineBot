@@ -7,9 +7,10 @@ from utils import send_text_message
 from linebot import LineBotApi, WebhookParser
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage, FlexSendMessage , ImageSendMessage
-from message import roger_image
+
 from crawler import roger_getLink
 import message
+import GoogleSheet_update 
 
 
 class TocMachine(GraphMachine):
@@ -18,11 +19,105 @@ class TocMachine(GraphMachine):
 
     def is_going_to_menu(self, event):
         text = event.message.text
-        return text.lower() == "馬上來" or text.lower() == "不留念了" or text.lower() == "沒料，請你離開" or text.lower() == "冷靜一下" or text.lower() == "確實"
+        return text.lower() == "馬上來"  or text == "跟不上我的速度吧阿嘎"
 
     def is_going_to_roger(self, event):
         text = event.message.text
-        return text.lower() == "我是好傑寶"
+        return text.lower() == "我是好傑寶" or text == "回到上一步" or text.lower() == "不留念了" or text.lower() == "沒料，請你離開" or text.lower() == "冷靜一下" or text.lower() == "確實"
+    def is_going_to_roger_database(self, event):
+        text = event.message.text
+        # 回覆目前已儲存的的所有連結
+        if(text == "查看最愛影片"):
+
+            userid = event.source.user_id 
+            line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
+            line_bot_api.push_message(userid, TextSendMessage("處理中，請稍後..."))
+            url_list = GoogleSheet_update.get_favorite_url()
+            if(len(url_list) != 0):
+                line_bot_api.push_message(userid, TextSendMessage("已儲存的最愛影片："))
+                for word in url_list:
+                    line_bot_api.push_message(userid, TextSendMessage(word))
+            else:
+                line_bot_api.push_message(userid, TextSendMessage("目前沒有儲存任何影片!!"))
+        # 回覆目前已儲存的的所有梗圖
+        elif(text == "查看所有梗圖"):
+
+            userid = event.source.user_id 
+            line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
+            line_bot_api.push_message(userid, TextSendMessage("處理中，請稍後..."))
+            url_list = GoogleSheet_update.get_favorite_imgur_url()
+            if(len(url_list) != 0):
+                for word in url_list:
+                    line_bot_api.push_message(userid, ImageSendMessage(word , word))
+            else:
+                line_bot_api.push_message(userid, TextSendMessage("目前沒有儲存任何梗圖!!"))
+        elif (text == "給我資料庫連結!"):
+            userid = event.source.user_id 
+            line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
+            line_bot_api.push_message(userid, TextSendMessage("https://docs.google.com/spreadsheets/d/1ssBedfSQYLVlz-vIbT1-EjUq9HsZ4_QtHrK3Pavl4WM/edit#gid=0"))
+    
+        return text.lower() == "書籤與資料管理" or text == "查看最愛影片" or text == "給我資料庫連結!" or text == "查看所有梗圖"
+    
+    def from_add_url_to_roger_database(self, event):
+        url = event.message.text
+        userid = event.source.user_id 
+        line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
+        line_bot_api.push_message(userid, TextSendMessage("處理中，請稍後..."))
+        #開始更新最愛清單
+        if(GoogleSheet_update.add_url(url) == True):       
+            line_bot_api.push_message(userid, TextSendMessage(text = "成功更新最愛清單!"))    
+        else:
+            line_bot_api.push_message(userid, TextSendMessage(text = "更新失敗，請確認是否已有相同網址，或是該連結並非youtube影片連結。"))
+        return True    
+    
+    def from_del_url_to_roger_database(self, event):
+        url = event.message.text
+        userid = event.source.user_id 
+        line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
+        line_bot_api.push_message(userid, TextSendMessage("處理中，請稍後..."))
+        #開始更新最愛清單
+        if(GoogleSheet_update.del_url(url) == True):       
+            line_bot_api.push_message(userid, TextSendMessage(text = "成功更新最愛清單!"))    
+        else:
+            line_bot_api.push_message(userid, TextSendMessage(text = "更新失敗，請確認是否已有相同網址，或是該連結並非youtube影片連結。"))
+        return True    
+    def from_add_imgur_url_to_roger_database(self, event):
+        url = event.message.text
+        userid = event.source.user_id 
+        line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
+        line_bot_api.push_message(userid, TextSendMessage("處理中，請稍後..."))
+        #開始更新最愛清單
+        if(GoogleSheet_update.add_imgur_url(url) == True):       
+            line_bot_api.push_message(userid, TextSendMessage(text = "成功更新梗圖清單!"))    
+        else:
+            line_bot_api.push_message(userid, TextSendMessage(text = "更新失敗，請確認是否已有相同網址，或是該連結並非imgur連結 (例：i.imgur.com/XXXXXX.png)。"))
+        return True    
+    
+    def from_del_imgur_url_to_roger_database(self, event):
+        url = event.message.text
+        userid = event.source.user_id 
+        line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
+        line_bot_api.push_message(userid, TextSendMessage("處理中，請稍後..."))
+        #開始更新最愛清單
+        if(GoogleSheet_update.del_imgur_url(url) == True):       
+            line_bot_api.push_message(userid, TextSendMessage(text = "成功更新梗圖清單!"))    
+        else:
+            line_bot_api.push_message(userid, TextSendMessage(text = "更新失敗，請確認是否已有相同網址，或是該連結並非imgur連結 (例：i.imgur.com/XXXXXX.png)。"))
+        return True
+    
+    def is_going_to_roger_database_add_url(self, event):
+        text = event.message.text
+        return text == "新增最愛影片" 
+    def is_going_to_roger_database_del_url(self, event):
+        text = event.message.text
+        return text == "移除最愛影片" 
+    def is_going_to_roger_database_add_imgur_url(self, event):
+        text = event.message.text
+        return text == "新增梗圖" 
+    def is_going_to_roger_database_del_imgur_url(self, event):
+        text = event.message.text
+        return text == "移除梗圖" 
+    
     def is_going_to_roger_video(self, event):
         text = event.message.text
         return text.lower() == "看看最新影片"
@@ -63,7 +158,7 @@ class TocMachine(GraphMachine):
     def on_enter_roger_image(self, event):
         userid = event.source.user_id
         
-        image_path = roger_image()    
+        image_path = GoogleSheet_update.roger_image()    
 
         line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
         line_bot_api.push_message(userid, ImageSendMessage(image_path , image_path))
@@ -71,6 +166,32 @@ class TocMachine(GraphMachine):
         to_reply = FlexSendMessage("回主選單", message_block)
         line_bot_api.push_message(userid, to_reply)
     
+    def on_enter_roger_database(self, event):
+        reply_token = event.reply_token
+        message_block = message.roger_database_menu
+        to_reply = FlexSendMessage("資料庫管理", message_block)
+        line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
+        line_bot_api.reply_message(reply_token, to_reply)
+        
+    def on_enter_roger_database_add_url(self, event):
+        userid = event.source.user_id
+        line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
+        line_bot_api.push_message(userid, TextSendMessage(text = "請告訴我影片連結~"))
+        
+    def on_enter_roger_database_del_url(self, event):
+        userid = event.source.user_id
+        line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
+        line_bot_api.push_message(userid, TextSendMessage(text = "請告訴我影片連結~"))
+        
+    def on_enter_roger_database_add_imgur_url(self, event):
+        userid = event.source.user_id
+        line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
+        line_bot_api.push_message(userid, TextSendMessage(text = "請告訴我梗圖連結~ "))
+        
+    def on_enter_roger_database_del_imgur_url(self, event):
+        userid = event.source.user_id
+        line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
+        line_bot_api.push_message(userid, TextSendMessage(text = "請告訴我梗圖連結~ "))
         
     def on_enter_roger_video1(self, event):
         userid = event.source.user_id

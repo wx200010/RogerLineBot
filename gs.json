@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "careful-isotope-292007",
+  "private_key_id": "0be0744c60d0e6545c12f615bd6555d39d1ae550",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDpAuY0e/PwpdFI\nC9X82Y+40KiuYg0/i8kFsTOCwzyEUhWT9Cxz/QXo+ZbdGfKMsn/kEUHarQRdr9lj\nosjWC4gXSRDyguFIIJQHPxScs0QB6HWFqWYjrk3whniZtuHnjfGLGigY1lKlRkB2\ntVCXe/Mee5l4/rmBXyRzVOk2ujUDzD1NvnXnpvswxcalheX+LTPC83xmGVz+qEso\nAF5aF+XEtN/W6f7LlkWdSa+4oByOHjIGomOZdP++9dxQ5v+v71dgfE5T3Dh/XPIx\nYk2NBkmtPdUI2AYcWzpR7fuq8Ye+xUXAW+gA8IBC97ciE9Ni9+Qg+fG59usSL90k\nlCVm4HFhAgMBAAECgf8rTcrwzrYHNHscyxZSZ371vG8mvmEGszjGVgrQYAI30ESU\nzkw5kOoIRKkxRr7DLBqE2+tDrtA+cbTXdulSaCEAMtj9TKRWflUEZjTHEexMvT+Q\nPwjGSgrjT/MGKBRdm6sDTJQ6zl7wHTvKDw+6A7twDGENEaxoGcZ7Mn3WVU6sW9Bo\nRZYE7/UtXviRBjF+oCCHnpSyf3Zj3xHg1GFw7kzJsBJ5QUYRCyXrr3t0MktBvGMX\njFIpryE9XO3zXQevoXNdnp37OmU1Y/zLr9k7Z+SyXmH8TER9X+38japcTaMtTVN4\nbDevnRm4gm9rIcrC41+QWC5z/X18oJA0uMSV0AECgYEA9HAE7Z6lG++UMUpiDJrn\nEqJAfsW80U+17GTxICGx1FVZHxUMPnVchy24eFGz9XfEKVD3alNSOeTrjXyn3RbE\nrUh6hnXdHmjnXv1Mmb3W5CK0qg1RkJ2X4XUVDNNl7b0R81WFMl/29L4ehc3GuOnE\nRE24x0kWAr+35ffOC1i76mECgYEA9AiD97b69Zwjv38tAW9slqtFvt8O6Cw4HyBQ\nshr9tWf5YEbU+FioV8XvEw5rixcE0ssgKc6yeoRmhqyXZqBfh41ihRlllfqjSpiN\nlF/stEB8UqyIM5XMDxs7PsZUWzMS6uyAOh06BXodrrdGy/3sVFa9QkuIBC1p1HoW\nvzUH5wECgYEAkuWTAJ47iWtUOr8B56NbxKX/bnA1BfEKWnNbOT0mmn1kHrrObean\n4ZEHcD9hj94W4+GFnr9OBf7d1FyaoNJjBeQtxgqlBPZ0PXCqDSa6MsXsntl8MBWV\nRefP67JLajEazYqSjnB/gBuVSkIc79mEmqu+pPz2HlbLFIf0qnr8C2ECgYEArlqH\nLy1lEKaGRAOxPB1IED4+jqkAFZHCZzrHbPkr27h1y/vPncB6Rnv83DipTa8cmx7V\n1AkCK9b9Cau2YHSkzEyP31jN4+I3WMy2GxSOIhsQuGDczz5vlTt3kNpS2vYaxg5D\nb0ICendNTc9UndrGR1vRzNP6UkHAIzc3mVViWAECgYEAh1QemRbv4typKeMoErYM\nPoBmHuu/BXTdfAHAZCR4x6MajFSP6HkcWAzNq9hwUemxXAjYJNiJULTvGUDCY0jE\n2g5xpZAjeM67+3hnfsu+eP2yMftMzxtmSH4FvfFo+6i6JURjY7mTlRGGbI4taL90\nWMoicV8H7MTQ90w/lEJl2OU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "rogerlinebot@careful-isotope-292007.iam.gserviceaccount.com",
+  "client_id": "100691524110935487159",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rogerlinebot%40careful-isotope-292007.iam.gserviceaccount.com"
+}

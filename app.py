@@ -78,26 +78,27 @@ def webhook_handler():
             continue
         if not isinstance(event.message.text, str):
             continue
-        print(f"\nFSM STATE: {machine.state}")
-        print(f"REQUEST BODY: \n{body}")
         global machines
         
         # Create a machine for new user
         if event.source.user_id not in machines:
-            reply_token = event.reply_token
             machines[event.source.user_id] = create_machine()
             userid = event.source.user_id
+
             message_block = message.user_start
             to_reply = FlexSendMessage("進入主選單", message_block)
             line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
-            line_bot_api.reply_message(reply_token, TextSendMessage(text = "哈囉~ 我是好傑寶的聊天機器人"))
+            line_bot_api.push_message(userid,TextSendMessage(text = "哈囉~ 我是好傑寶的聊天機器人"))
             line_bot_api.push_message(userid,to_reply)
 
         # Advance the FSM for each MessageEvent
-        response = machines[event.source.user_id].advance(event)
-        if response == False:
-            send_text_message(event.reply_token, "錯誤訊息!!")
+        else:
+            response = machines[event.source.user_id].advance(event)
+            if response == False:
+                send_text_message(event.reply_token, "錯誤訊息!!")
 
+        print(f"\nFSM STATE: {machines[event.source.user_id].state}")
+        print(f"REQUEST BODY: \n{body}")
 
     return "OK"
 

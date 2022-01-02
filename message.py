@@ -96,7 +96,7 @@ roger_menu ={
       "type": "bubble",
       "hero": {
         "type": "image",
-        "url": "https://i.imgur.com/ClUYDec.png",
+        "url": "https://i.imgur.com/xreM40J.png",
         "size": "full",
         "aspectMode": "fit",
         "aspectRatio": "1.25:1"
@@ -124,7 +124,7 @@ roger_menu ={
       "type": "bubble",
       "hero": {
         "type": "image",
-        "url": "https://i.imgur.com/ZVJUmAQ.png",
+        "url": "https://i.imgur.com/Oz2mWBF.png",
         "size": "full",
         "aspectMode": "fit",
         "aspectRatio": "1.25:1"
@@ -139,6 +139,62 @@ roger_menu ={
               "type": "message",
               "label": "隨機抽羅傑梗圖",
               "text": "鬼抽"
+            },
+            "height": "md",
+            "color": "#0071fa",
+            "style": "primary"
+          }
+        ],
+        "spacing": "lg"
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://i.imgur.com/AJoRtCN.png",
+        "size": "full",
+        "aspectMode": "fit",
+        "aspectRatio": "1.25:1"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "書籤與資料管理",
+              "text": "書籤與資料管理"
+            },
+            "height": "md",
+            "color": "#0071fa",
+            "style": "primary"
+          }
+        ],
+        "spacing": "lg"
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://i.imgur.com/CmhGca7.png",
+        "size": "full",
+        "aspectMode": "fit",
+        "aspectRatio": "1.25:1"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "返回主選單",
+              "text": "跟不上我的速度吧阿嘎"
             },
             "height": "md",
             "color": "#0071fa",
@@ -209,6 +265,168 @@ roger_video_ask = {
         ],
         "spacing": "lg"
       }
+    }
+  ]
+}
+
+roger_database_menu = {
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "header": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "影片區管理~",
+            "weight": "bold",
+            "align": "center",
+            "size": "lg"
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "查看最愛影片",
+              "text": "查看最愛影片"
+            },
+            "height": "md",
+            "color": "#007cdb",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "新增最愛影片",
+              "text": "新增最愛影片"
+            },
+            "height": "md",
+            "color": "#007cdb",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "移除最愛影片",
+              "text": "移除最愛影片"
+            },
+            "height": "md",
+            "color": "#007cdb",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "給我資料庫連結!",
+              "text": "給我資料庫連結!"
+            },
+            "height": "md",
+            "color": "#007cdb",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "回到上一步",
+              "text": "回到上一步"
+            },
+            "height": "md",
+            "color": "#005af5",
+            "style": "primary"
+          }
+        ],
+        "spacing": "lg"
+      },
+    },
+    {
+      "type": "bubble",
+      "header": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "梗圖區管理~",
+            "weight": "bold",
+            "align": "center",
+            "size": "lg"
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "查看所有梗圖",
+              "text": "查看所有梗圖"
+            },
+            "height": "md",
+            "color": "#007cdb",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "新增梗圖",
+              "text": "新增梗圖"
+            },
+            "height": "md",
+            "color": "#007cdb",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "移除梗圖",
+              "text": "移除梗圖"
+            },
+            "height": "md",
+            "color": "#007cdb",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "給我資料庫連結!",
+              "text": "給我資料庫連結!"
+            },
+            "height": "md",
+            "color": "#007cdb",
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "回到上一步",
+              "text": "回到上一步"
+            },
+            "height": "md",
+            "color": "#005af5",
+            "style": "primary"
+          }
+        ],
+        "spacing": "lg"
+      },
     }
   ]
 }
