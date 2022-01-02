@@ -11,7 +11,7 @@ pygraphviz = "==1.6"
 transitions = "==0.8.10"
 line-bot-sdk = "==2.0.1"
 Flask = "==2.0.2"
-
+gspread = "==5.1.1"
 
 [requires]
 python_version = "3.6.13"
