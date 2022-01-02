@@ -2,12 +2,24 @@ from fsm import TocMachine
 
 def create_machine():
     machine = TocMachine(
-    states=["user", "menu", "roger", "roger_image","roger_database" , "roger_database_add_url" , "roger_database_del_url" ,
+    states=["user", "menu", "show_fsm" , "roger", "roger_image","roger_database" , "roger_database_add_url" , "roger_database_del_url" ,
             "roger_database_add_imgur_url" , "roger_database_del_imgur_url" ,  "roger_video", "roger_video1", "roger_video5" , "roger_bad" ],
     transitions=[
         {
             "trigger": "advance",
             "source": "user",
+            "dest": "menu",
+            "conditions": "is_going_to_menu",
+        },
+        {
+            "trigger": "advance",
+            "source": "menu",
+            "dest": "show_fsm",
+            "conditions": "is_going_to_show_fsm",
+        },
+        {
+            "trigger": "advance",
+            "source": "show_fsm",
             "dest": "menu",
             "conditions": "is_going_to_menu",
         },

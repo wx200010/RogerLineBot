@@ -85,6 +85,73 @@ main_menu = {
         ],
         "spacing": "lg"
       }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://i.imgur.com/21yz2fS.png",
+        "size": "full",
+        "aspectMode": "fit",
+        "aspectRatio": "1.25:1"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "顯示FSM",
+              "text": "顯示FSM"
+            },
+            "height": "md",
+            "color": "#00aadb",
+            "style": "primary"
+          }
+        ],
+        "spacing": "lg"
+      }
+    }
+  ]
+}
+show_fsm_menu = {
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "header": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "回去主選單吧！",
+            "weight": "bold",
+            "align": "center",
+            "size": "lg"
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "馬上來",
+              "text": "馬上來"
+            },
+            "height": "md",
+            "color": "#00c2f5",
+            "style": "primary"
+          }
+        ],
+        "spacing": "lg"
+      }
     }
   ]
 }

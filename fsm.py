@@ -21,6 +21,10 @@ class TocMachine(GraphMachine):
         text = event.message.text
         return text.lower() == "馬上來"  or text == "跟不上我的速度吧阿嘎"
 
+    def is_going_to_show_fsm(self, event):
+        text = event.message.text
+        return text == "顯示FSM"
+
     def is_going_to_roger(self, event):
         text = event.message.text
         return text.lower() == "我是好傑寶" or text == "回到上一步" or text.lower() == "不留念了" or text.lower() == "沒料，請你離開" or text.lower() == "冷靜一下" or text.lower() == "確實"
@@ -140,6 +144,15 @@ class TocMachine(GraphMachine):
         to_reply = FlexSendMessage("這是主選單", message_block)
         line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
         line_bot_api.reply_message(reply_token, to_reply)
+        
+    def on_enter_show_fsm(self, event):
+        userid = event.source.user_id
+        message_block = message.show_fsm_menu
+        to_reply = FlexSendMessage("回上一步", message_block)
+        line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
+        line_bot_api.push_message(userid, ImageSendMessage("https://i.imgur.com/21yz2fS.png" , "https://i.imgur.com/21yz2fS.png"))
+        line_bot_api.push_message(userid, to_reply)
+        
         
     def on_enter_roger(self, event):
         reply_token = event.reply_token
