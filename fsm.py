@@ -150,7 +150,7 @@ class TocMachine(GraphMachine):
         message_block = message.show_fsm_menu
         to_reply = FlexSendMessage("回上一步", message_block)
         line_bot_api = LineBotApi( os.getenv('LINE_CHANNEL_ACCESS_TOKEN') )
-        line_bot_api.push_message(userid, ImageSendMessage("https://i.imgur.com/21yz2fS.png" , "https://i.imgur.com/21yz2fS.png"))
+        line_bot_api.push_message(userid, ImageSendMessage("https://i.imgur.com/Nbhd9pm.png" , "https://i.imgur.com/Nbhd9pm.png"))
         line_bot_api.push_message(userid, to_reply)
         
         

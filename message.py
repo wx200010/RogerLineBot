@@ -90,7 +90,7 @@ main_menu = {
       "type": "bubble",
       "hero": {
         "type": "image",
-        "url": "https://i.imgur.com/21yz2fS.png",
+        "url": "https://i.imgur.com/Nbhd9pm.png",
         "size": "full",
         "aspectMode": "fit",
         "aspectRatio": "1.25:1"
